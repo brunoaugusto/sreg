@@ -47,7 +47,7 @@ de duas letras do Estado brasileiro desejado:
 ```php
 <?php
 
-$sr = new StateRegistration( 'XX12345678' );
+$sr = new StateRegistration( 'MG062.307.904/0081' );
 
 echo ( $sr -> isValid() ? 'Valid' : 'Invalid' );
 
@@ -66,14 +66,14 @@ obtidas a partir da análise da Inscrição Estadual, determina qual algoritmo,
 de qual Estado será utilizado.
 
 Caso, porém, você prefira utilizar os módulos individualmente, basta invocar o
-método de interface `validate()` que todas classe de algoritmo implementam
-informando apenas os números da Inscrição Estadual limpa, sem espaços e,
-principalmente, **sem pontuação**:
+método `validate()` que todas classe de algoritmo implementam informando apenas
+os números da Inscrição Estadual limpa, sem espaços e, principalmente,
+**sem pontuação**:
 
 ```php
 <?php
 
-echo ( Algos\MG::validate( '062.307.904/0081' ) ? 'Valid' : 'Invalid' );
+echo ( Algos\MG::validate( '0623079040081' ) ? 'Valid' : 'Invalid' );
 
 ?>
 ```
@@ -82,7 +82,6 @@ echo ( Algos\MG::validate( '062.307.904/0081' ) ? 'Valid' : 'Invalid' );
 um caractere 'P' no início da inscrição ficando esta como única ressalva ao
 termo *apenas os números* feita acima.
 
-Assim, caso haja a necessidade de integrar os algoritmos de
 ## Suporte
 
 Qualquer problema que encontrar fique à vontade para criar uma nova *[issue][issue]*.
@@ -91,8 +90,8 @@ Mas pesquise antes, não dói nada. ;-)
 
 ## Licença & Agradecimentos
 
-Todos os algoritmos podem ser encontrados no site do [SINTEGRA][sintegra] para consulta no
-menu **Serviços**, opção **Inscrições Estaduais**.
+Todos os algoritmos podem ser encontrados no site do [SINTEGRA][sintegra] para
+consulta no menu **Serviços**, opção **Inscrições Estaduais**.
 
 Todos os algoritmos implementados estão licenciados sob a Licença
 *Creative Commons Attribution 3.0 Unported* que lhe permite usar, adaptar e
