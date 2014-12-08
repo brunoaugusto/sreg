@@ -1,0 +1,13 @@
+{
+    "name": "brunoaugusto/sreg",
+    "type": "library",
+    "description": "Biblioteca de validação de inscrição estadual",
+    "keywords": ["inscricao estadual"],
+    "homepage": "https://github.com/brunoaugusto/sreg",
+    "license": "CC BY 3.0",
+    "autoload": {
+        "psr-0": {
+            "Algos": "Algos/"
+        }
+    }
+}
