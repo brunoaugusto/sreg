@@ -36,7 +36,7 @@ class AM {
         $sum = 0;
 
         for( $w = '98765432', $c = 0; $c < 8; $c += 1 )
-            $sum += $w{ $c } * $value{ $c };
+            $sum += $w{ $c } * $number{ $c };
 
         if( $sum < 11 ) {
 

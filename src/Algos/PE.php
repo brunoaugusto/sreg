@@ -103,7 +103,7 @@ class PE {
 
         $sum = 0;
 
-        for( $w = '5432198765432', $c = 0; $c < 13; $c += )
+        for( $w = '5432198765432', $c = 0; $c < 13; $c += 1 )
             $sum += $w{ $c } * $number{ $c };
 
         // Finding the Check Digit
