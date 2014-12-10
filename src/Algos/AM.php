@@ -3,25 +3,25 @@
 namespace Algos;
 
 /**
- * Brazilian "State Registration" Algorithm for State "PA" (Pará)
+ * Brazilian "State Registration" Algorithm for State "AM" (Amazonas)
  *
  * @author Bruno Augusto <magnusthorek@gmail.com>
  * @copyright Copyright (c) 2010-2014 Next Studios
  * @license http://creativecommons.org/licenses/by/3.0/   Attribution 3.0 Unported
  *
- * @see http://www.sintegra.gov.br/Cad_Estados/cad_PA.html
+ * @see http://www.sintegra.gov.br/Cad_Estados/cad_AM.html
  */
-class PA {
+class AM {
 
     /**
-     * Validates given "State Registration" against "Pará" Algorithm
+     * Validates given "State Registration" against "Amazonas" Algorithm
      *
      * @param string|integer $number
      *  Given "State Registration" to be validated
      *
      * @return bool
-     *  TRUE if given "State Registration" is valid according to "Pará" Algorithm
-     *  and FALSE otherwise
+     *  TRUE if given "State Registration" is valid according to
+     * "Amazonas" Algorithm and FALSE otherwise
      */
     public static function validate( $number ) {
 
@@ -31,20 +31,21 @@ class PA {
 
         if( strlen( $number ) != 9 ) return FALSE;
 
-        // Algorithm Rule: First two digits must be 15
-
-        if( substr( $number, 0, 2 ) != '15' ) return FALSE;
-
         // Finding the Check Digit
 
         $sum = 0;
 
-        for( $w = '98765432', $c = 0; $c < 8; $c += )
+        for( $w = '98765432', $c = 0; $c < 8; $c += 1 )
             $sum += $w{ $c } * $number{ $c };
 
-        $cd = ( $sum % 11 );
+        if( $sum < 11 ) {
 
-        $cd = ( $cd != 0 || $cd != 1 ? 11 - $cd : 0 );
+            $cd = ( 11 - $sum );
+
+        } else {
+
+            $cd = ( ( $sum % 11 ) <= 1 ? 0 : 11 - ( $sum % 11 ) );
+        }
 
         // Checking if last character match the Check Digit
 

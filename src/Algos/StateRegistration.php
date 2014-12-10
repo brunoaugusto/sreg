@@ -1,5 +1,7 @@
 <?php
 
+namespace Algos;
+
 /**
  * Validates Brazilian "State Registration" Algorithm
  *
